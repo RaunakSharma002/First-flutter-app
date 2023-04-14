@@ -1,6 +1,5 @@
 class CatalogModel {
-  static List<Item> items
-  = [
+  static List<Item> items = [
     Item(
         id: 1,
         name: "iPhone 12 Pro",
@@ -10,6 +9,13 @@ class CatalogModel {
         image:
             "https://img5.gadgetsnow.com/gd/images/products/additional/large/G201788_View_1/mobiles/smartphones/apple-iphone-12-128-gb-red-6-gb-ram-.jpg")
   ];
+
+  //Get item by Id
+  static Item getById(int id) =>
+      items.firstWhere((element) => element.id == id, orElse: null);
+
+  //Get item by position
+  static Item getByPosition(int pos) => items[pos];
 }
 
 class Item {
